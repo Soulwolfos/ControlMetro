@@ -1,0 +1,2 @@
+# Paralela
+Controles de paralela
