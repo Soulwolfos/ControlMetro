@@ -6,4 +6,6 @@
 #include <iostream>
 #include <string.h>
 
+void Inicializar_Lineas(string,string,string,string,string,string);
+
 #endif /* FUNCIONES_H */
