@@ -52,7 +52,14 @@ int main(int argc, char** argv) {
             , "FRA Franklin", "BIO Bío Bío", "NUB Ñuble", "ESN Estadio Nacional"
             , "NUO Ñuñoa", "ISU Inés de Suárez", "LEN Los Leones"};
    
-    std::cout<<linea4a[1]<<endl<<endl;
+    string sub1 = linea4a[1];
+    
+    int pos = sub1.find(" ");
+    string codigo = sub1.substr(0,pos);
+    string nombre = sub1.substr((pos+1)); 
+    
+    cout<<"Codigo de estacion: "<<codigo<<endl;
+    cout<<"NOmbre estacion: "<<nombre<<endl;
     return 0;
 }
 
