@@ -6,6 +6,13 @@
 #include <iostream>
 #include <string.h>
 
-void Inicializar_Lineas(string,string,string,string,string,string);
+using namespace std;
+
+void set_l1(string []);
+void set_l2(string []);
+void set_l4(string []);
+void set_l4a(string []);
+void set_l5(string []);
+void set_l6(string []);
 
 #endif /* FUNCIONES_H */

@@ -8,51 +8,9 @@
 using namespace std;
 
 int main(int argc, char** argv) {
-    
-    
-    string LineaUno[32] ={"SP San Pablo", "NP Neptuno", "PJ Pajaritos", "LR Las Rejas"
-            ,"EC Ecuador", "AH San Alberto Hurtado", "US Universidad de Santiago"
-            ,"EL Estación Central", "LA ULA", "RP República", "LH Los Héroes"
-            ,"LM La Moneda", "CH Universidad de Chile", "SL Santa Lucía"
-            ,"UC Universidad Católica", "BA Baquedano", "SA Salvador"
-            ,"MM Manuel Montt", "PV Pedro de Valdivia", "LE Los Leones"
-            ,"TB Tobalaba", "GO El Golf", "AL Alcántara", "EM Escuela Militar"
-            ,"MQ Manquehue", "HM Hernando de Magallanes", "LD Los Dominicos"};
    
-    string linea2[25] = {"LC La Cisterna", "EP El Parrón", "LO Lo Ovalle", "CN Ciudad del Niño"
-            ,"DE Departamental", "LV Lo Vial", "SM San Miguel", "LL El Llano"
-            , "FR Franklin", "RO Rondizzoni", "PQ Parque OHiggins", "TO Toesca"
-            , "HE Los Héroes", "AN Santa Ana", "CA Puente Cal y Canto"
-            , "PT Patronato", "CB Cerro Blanco", "CE Cementerios", "EI Einstein"
-            , "DO Dorsal", "ZA Zapadores", "AV Vespucio Norte"};
-    
-    string linea4[25] = {"TOB Tobalaba", "COL Cristóbal Colón", "BIL Francisco Bilbao"
-            , "PDG Principe de Gales", "SBO Simón Bolivar", "PEG Plaza Egaña"
-            , "LOR Los Orientales", "RGR Grecia", "LPR Los Presidentes"
-            , "RQU Quilín", "LTO Las Torres", "MAC Macul", "VMA Vicuña Mackenna"
-            , "VVA Vicente Valdés", "RMA Rojas Magallanes", "TRI Trinidad"
-            , "SJE San José de la Estrella", "LQU Los Quillayes", "ECO Elisa Correa"
-            , "HSR Hospital Sótero del Rio", "LME Las Mercedes"
-            , "PIN Protectora de la Infancia", "PPA Plaza de Puente Alto"};
-   
-    string linea4a[7] = {"VIM Vicuña Mackenna", "SJU Santa Julia", "LGR La Granja"
-            , "SRO Santa Rosa", "SRA San Ramón", "LCI La Cisterna"};
-    
-    string linea5[38] = {"PM Plaza de Maipú", "SB Santiago Bueras", "DS Del Sol"
-            , "MT Monte Tabor", "LP Las Parcelas", "LS Laguna Sur"
-            , "BR Barrancas", "PU Pudahuel", "SO San Pablo", "PR Lo Prado"
-            , "BL Blanqueado", "GL Gruta de Lourdes", "QN Quinta Normal"
-            , "RC Cumming", "NA Santa Ana", "PZ Plaza de Armas", "BE Bellas Artes"
-            , "BQ Baquedano", "PB Parque Bustamante", "SI Santa Isabel"
-            , "IR Irarrázaval", "NU Ñuble", "RA Rodrigo de Araya", "CV Carlos Valdovinos"
-            , "AG Camino Agrícola", "SJ San Joaquín", "PE Pedrero", "MA Mirador"
-            , "LF Bellavista de La Florida", "VV Vicente Valdés"};
-   
-    string linea6[12] = {"CER Cerrillos", "LVA Lo Valledor", "PAC Pedro Aguirre Cerda"
-            , "FRA Franklin", "BIO Bío Bío", "NUB Ñuble", "ESN Estadio Nacional"
-            , "NUO Ñuñoa", "ISU Inés de Suárez", "LEN Los Leones"};
-   
-    string sub1 = linea4a[1];
+    /* PARA SEPARA EL CODIGO DEL NOMBRE  
+    string sub1 = linea4a[3];
     
     int pos = sub1.find(" ");
     string codigo = sub1.substr(0,pos);
@@ -60,6 +18,26 @@ int main(int argc, char** argv) {
     
     cout<<"Codigo de estacion: "<<codigo<<endl;
     cout<<"NOmbre estacion: "<<nombre<<endl;
+    
+    */
+    
+    
+    //SETEAR LAS LINEAS 
+    string linea1[40],linea2[40],linea4[40],linea4a[40],linea5[40],linea6[40];
+    set_l1(linea1);
+    set_l2(linea2);
+    set_l4(linea4);
+    set_l4a(linea4a);
+    set_l5(linea5);
+    set_l6(linea6);
+    
+    cout<<"Estacion de metro L1: "<<linea1[2]<<endl<<endl;
+    cout<<"Estacion de metro L2: "<<linea2[2]<<endl<<endl;
+    cout<<"Estacion de metro L4: "<<linea4[2]<<endl<<endl;
+    cout<<"Estacion de metro L4a: "<<linea4a[2]<<endl<<endl;
+    cout<<"Estacion de metro L5: "<<linea5[2]<<endl<<endl;
+    cout<<"Estacion de metro L6: "<<linea6[2]<<endl<<endl;
+    
     return 0;
 }
 
