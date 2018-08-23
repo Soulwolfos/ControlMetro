@@ -14,5 +14,11 @@ void set_l4(string []);
 void set_l4a(string []);
 void set_l5(string []);
 void set_l6(string []);
+void llenarLinea1(int [][118]);
+void llenarLinea2(int [][118]);
+void llenarLinea4(int [][118]);
+void llenarLinea4a(int [][118]);
+void llenarLinea5(int [][118]);
+void llenarLinea6(int [][118]);
 
 #endif /* FUNCIONES_H */

@@ -31,6 +31,16 @@ int main(int argc, char** argv) {
     set_l5(linea5);
     set_l6(linea6);
     
+    int matriz[118][118];
+    llenarLinea1(matriz);
+    llenarLinea2(matriz);
+    llenarLinea4(matriz);
+    llenarLinea4a(matriz);
+    llenarLinea5(matriz);
+    llenarLinea6(matriz);
+    
+  
+    
     cout<<"Estacion de metro L1: "<<linea1[2]<<endl<<endl;
     cout<<"Estacion de metro L2: "<<linea2[2]<<endl<<endl;
     cout<<"Estacion de metro L4: "<<linea4[2]<<endl<<endl;

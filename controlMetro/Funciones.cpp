@@ -78,3 +78,99 @@ void set_l6(string linea[]){
         linea[i]=a[i];
     }
 }
+
+void llenarLinea1(int matrizAdy[][118]){
+    for(int i = 0; i<27; i++){
+        for(int j=0; j<27; j++){
+            if(j == i+1){
+                matrizAdy[i][j] = 1;
+            }
+            else if(i == j+1){
+                matrizAdy[i][j] = 1;
+            }
+            else{
+                matrizAdy[i][j] = 0;
+            }
+        }
+    }
+}
+
+void llenarLinea2(int matrizAdy[][118]){
+    for(int i = 27; i<49; i++){
+        for(int j=27; j<49; j++){
+            if(j == i+1){
+                matrizAdy[i][j] = 1;
+            }
+            else if(i == j+1){
+                matrizAdy[i][j] = 1;
+            }
+            else{
+                matrizAdy[i][j] = 0;
+            }
+        }
+    }
+}
+
+void llenarLinea4(int matrizAdy[][118]){
+    for(int i = 49; i<72; i++){
+        for(int j=49; j<72; j++){
+            if(j == i+1){
+                matrizAdy[i][j] = 1;
+            }
+            else if(i == j+1){
+                matrizAdy[i][j] = 1;
+            }
+            else{
+                matrizAdy[i][j] = 0;
+            }
+        }
+    }
+}
+
+void llenarLinea4a(int matrizAdy[][118]){
+    for(int i = 72; i<78; i++){
+        for(int j = 72; j<78; j++){
+            if(j == i+1){
+                matrizAdy[i][j] = 1;
+            }
+            else if(i == j+1){
+                matrizAdy[i][j] = 1;
+            }
+            else{
+                matrizAdy[i][j] = 0;
+            }
+        }
+    }
+}
+
+void llenarLinea5(int matrizAdy[][118]){
+    for(int i = 78; i<108; i++){
+        for(int j=78; j<108; j++){
+            if(j == i+1){
+                matrizAdy[i][j] = 1;
+            }
+            else if(i == j+1){
+                matrizAdy[i][j] = 1;
+            }
+            else{
+                matrizAdy[i][j] = 0;
+            }
+        }
+    }
+}
+
+void llenarLinea6(int matrizAdy[][118]){
+    for(int i = 108; i<118; i++){
+        for(int j=108; j<118; j++){
+            if(j == i+1){
+                matrizAdy[i][j] = 1;
+            }
+            else if(i == j+1){
+                matrizAdy[i][j] = 1;
+            }
+            else{
+                matrizAdy[i][j] = 0;
+            }
+        }
+    }
+}
