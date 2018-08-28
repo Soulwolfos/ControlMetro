@@ -174,3 +174,18 @@ void llenarLinea6(int matrizAdy[][118]){
         }
     }
 }
+
+string BuscaCodigoEstacion(string linea[], string cod_estacion)     //Busca el codigo de la estacion y devuelve el nombre de la estacion correspondiente
+{
+    int ini=1000,fin=cod_estacion.length()+1;
+    string nom_estacion="";
+    for(int i=0; i<40; i++)
+    {
+        ini=linea[i].find(cod_estacion);
+        if(ini==0)
+            return nom_estacion=linea[i].substr(fin);
+
+    }
+    if(ini!=0)
+        return "Error, no se encontraron coincidencias.";
+}

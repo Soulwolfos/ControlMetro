@@ -48,6 +48,7 @@ int main(int argc, char** argv) {
     cout<<"Estacion de metro L5: "<<linea5[2]<<endl<<endl;
     cout<<"Estacion de metro L6: "<<linea6[2]<<endl<<endl;
     
+    cout<<"\n"<<BuscaCodigoEstacion(linea4,"RGR")<<endl;
     return 0;
 }
 
