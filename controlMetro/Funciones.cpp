@@ -175,6 +175,31 @@ void llenarLinea6(int matrizAdy[][118]){
     }
 }
 
+void llenarCombinaciones(int matrizAdy[][118]){
+    matrizAdy[0][86] = 1;
+    matrizAdy[10][39] = 1;
+    matrizAdy[15][95] = 1;
+    matrizAdy[19][117] = 1;
+    matrizAdy[20][49] = 1;
+    matrizAdy[27][77] = 1;
+    matrizAdy[35][111] = 1;
+    matrizAdy[39][10] = 1;
+    matrizAdy[40][92] = 1;
+    matrizAdy[49][20] = 1;
+    matrizAdy[61][72] = 1;
+    matrizAdy[62][107] = 1;
+    matrizAdy[72][61] = 1;
+    matrizAdy[77][27] = 1;
+    matrizAdy[86][0] = 1;
+    matrizAdy[92][40] = 1;
+    matrizAdy[95][15] = 1;
+    matrizAdy[99][113] = 1;
+    matrizAdy[107][62] = 1;
+    matrizAdy[111][35] = 1;
+    matrizAdy[113][99] = 1;
+    matrizAdy[117][19] = 1;
+}
+
 string BuscaCodigoEstacion(string linea[], string cod_estacion)     //Busca el codigo de la estacion y devuelve el nombre de la estacion correspondiente
 {
     int ini=1000,fin=cod_estacion.length()+1;

@@ -38,6 +38,7 @@ int main(int argc, char** argv) {
     llenarLinea4a(matriz);
     llenarLinea5(matriz);
     llenarLinea6(matriz);
+    llenarCombinaciones(matriz);
     
   
     

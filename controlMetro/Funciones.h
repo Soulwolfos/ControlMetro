@@ -20,6 +20,7 @@ void llenarLinea4(int [][118]);
 void llenarLinea4a(int [][118]);
 void llenarLinea5(int [][118]);
 void llenarLinea6(int [][118]);
+void llenarCombinaciones(int [][118]);
 string BuscaCodigoEstacion(string [], string);
 
 #endif /* FUNCIONES_H */
