@@ -20,17 +20,10 @@ int main(int argc, char** argv) {
     cout<<"NOmbre estacion: "<<nombre<<endl;
     
     */
-    
-    
+   
     //SETEAR LAS LINEAS 
-    string linea1[40],linea2[40],linea4[40],linea4a[40],linea5[40],linea6[40];
-    set_l1(linea1);
-    set_l2(linea2);
-    set_l4(linea4);
-    set_l4a(linea4a);
-    set_l5(linea5);
-    set_l6(linea6);
-    
+    string metro[118];
+    set_metro(metro);
     int matriz[118][118];
     llenarLinea1(matriz);
     llenarLinea2(matriz);
@@ -40,16 +33,42 @@ int main(int argc, char** argv) {
     llenarLinea6(matriz);
     llenarCombinaciones(matriz);
     
+    string estacionI = "";
+    int posI = 0;
+    for(int i=0; i<118; i++){
+        estacionI = metro[i];
+        int pos = estacionI.find(" ");
+        string codigo = estacionI.substr(0, pos);
+        string nombre = estacionI.substr((pos+1));
+        if(codigo == argv[1]){
+            posI = i;
+            cout<<"Estacion de origen: "<<nombre<<", "<<codigo<<", "<<i<<endl;
+        }
+    }
+    
+    string estacionF = "";
+    int posF = 0;
+    for(int i=0; i<118; i++){
+        estacionF = metro[i];
+        int pos = estacionF.find(" ");
+        string codigo = estacionF.substr(0, pos);
+        string nombre = estacionF.substr((pos+1));
+        if(codigo == argv[2]){
+            posF = i;
+            cout<<"Estacion final: "<<nombre<<", "<<codigo<<", "<<i<<endl;
+        }
+    }
+    
+    
+    /*for(int i=0; i<118; i++){
+        cout<<matriz[70][i]<<endl;
+    }*/
+    
+    dij(matriz, posI, posF);
+    
   
     
-    cout<<"Estacion de metro L1: "<<linea1[2]<<endl<<endl;
-    cout<<"Estacion de metro L2: "<<linea2[2]<<endl<<endl;
-    cout<<"Estacion de metro L4: "<<linea4[2]<<endl<<endl;
-    cout<<"Estacion de metro L4a: "<<linea4a[2]<<endl<<endl;
-    cout<<"Estacion de metro L5: "<<linea5[2]<<endl<<endl;
-    cout<<"Estacion de metro L6: "<<linea6[2]<<endl<<endl;
-    
-    cout<<"\n"<<BuscaCodigoEstacion(linea4,"RGR")<<endl;
+
     return 0;
 }
 
