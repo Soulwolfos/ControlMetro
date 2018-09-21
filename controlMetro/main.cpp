@@ -59,14 +59,7 @@ int main(int argc, char** argv) {
         }
     }
     
-    
-    /*for(int i=0; i<118; i++){
-        cout<<matriz[70][i]<<endl;
-    }*/
-    
     dij(matriz, posI, posF);
-    
-  
     
 
     return 0;
