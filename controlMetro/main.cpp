@@ -25,6 +25,13 @@ int main(int argc, char** argv) {
     string metro[118];
     set_metro(metro);
     int matriz[118][118];
+    
+    for(int i=0; i<118; i++){
+        for(int j=0; j<118; j++){
+            matriz[i][j] = 0;
+        }   
+    }
+    
     llenarLinea1(matriz);
     llenarLinea2(matriz);
     llenarLinea4(matriz);
@@ -33,35 +40,50 @@ int main(int argc, char** argv) {
     llenarLinea6(matriz);
     llenarCombinaciones(matriz);
     
-    string estacionI = "";
-    int posI = 0;
-    for(int i=0; i<118; i++){
-        estacionI = metro[i];
-        int pos = estacionI.find(" ");
-        string codigo = estacionI.substr(0, pos);
-        string nombre = estacionI.substr((pos+1));
-        if(codigo == argv[1]){
-            posI = i;
-            cout<<"Estacion de origen: "<<nombre<<", "<<codigo<<", "<<i<<endl;
-        }
+    string opcion = argv[1];
+    
+    if(opcion == "-v"){
+        cout<<"Integrantes: "<<endl;
+        cout<<"Michel Hernández"<<endl;
+        cout<<"Rodrigo Lobos"<<endl;
+        cout<<"Felipe Hernández"<<endl;
     }
     
-    string estacionF = "";
-    int posF = 0;
-    for(int i=0; i<118; i++){
-        estacionF = metro[i];
-        int pos = estacionF.find(" ");
-        string codigo = estacionF.substr(0, pos);
-        string nombre = estacionF.substr((pos+1));
-        if(codigo == argv[2]){
-            posF = i;
-            cout<<"Estacion final: "<<nombre<<", "<<codigo<<", "<<i<<endl;
+    else if(opcion == "-f"){
+        string estacionI = "";
+        int posI = 0;
+        for(int i=0; i<118; i++){
+            estacionI = metro[i];
+            int pos = estacionI.find(" ");
+            string codigo = estacionI.substr(0, pos);
+            string nombre = estacionI.substr((pos+1));
+            if(codigo == argv[2]){
+                posI = i;
+                cout<<"Estacion de origen: "<<nombre<<", "<<codigo<<", "<<i<<endl;
+            }
         }
+    
+        string estacionF = "";
+        int posF = 0;
+        for(int i=0; i<118; i++){
+            estacionF = metro[i];
+            int pos = estacionF.find(" ");
+            string codigo = estacionF.substr(0, pos);
+            string nombre = estacionF.substr((pos+1));
+            if(codigo == argv[3]){
+                posF = i;
+                cout<<"Estacion final: "<<nombre<<", "<<codigo<<", "<<i<<endl;
+            }
+        }
+        
+        dij(matriz, posI, posF);
+    }
+    else{
+        cout<<"opción no valida"<<endl;
     }
     
-    dij(matriz, posI, posF);
     
-
+    
     return 0;
 }
 

@@ -245,7 +245,7 @@ void llenarCombinaciones(int matrizAdy[][118]){
 
 void dij(int matriz[][118], int ini, int fin){
     int matrizAux[118][118], verticesUsados[118];
-    int auxMin=999999, vertice=0, verticeAux=0, camino[118];
+    int auxMin=9999999, vertice=0, camino[118];
     
     for(int i=0; i<118; i++){
         verticesUsados[i] = 0;
@@ -268,28 +268,44 @@ void dij(int matriz[][118], int ini, int fin){
         }  
     }
     
-    verticeAux+= matrizAux[0][vertice];
     verticesUsados[vertice] = 1;
+
     camino[0] = ini;
     camino[1] = vertice;
-    cout<<vertice<<endl;
-   
+    
+    cout<<"vertice inicial: "<<ini<<endl;
+    cout<<"vertice 2: "<<vertice<<endl;
+    
     int contador = 1;
     while(vertice != fin){
-        auxMin = 999999;
+  
         for(int i=0; i<118; i++){
             if(verticesUsados[i] == 0){
                 if(matriz[vertice][i] == 0){
                     matrizAux[contador][i] = matrizAux[contador-1][i];
                 }
                 else{
-                    matrizAux[contador][i] = matriz[vertice][i] + verticeAux;
+                    int largoAux = matriz[vertice][i] + auxMin;
+                    if(matrizAux[contador-1][i] != 0){
+                        if(largoAux < matrizAux[contador-1][i]){
+                            matrizAux[contador][i] = largoAux;
+                        }
+                        else{
+                            matrizAux[contador][i] = matrizAux[contador-1][i];
+                        }
+                    }
+                    else{
+                        matrizAux[contador][i] = largoAux;
+                    }
                 }             
             }
             else{
                 matrizAux[contador][i] = 0;
             }
         }
+        
+        
+        auxMin = 9999999;
         for(int i=0; i<118; i++){
             if(matrizAux[contador][i] != 0){
                 if(matrizAux[contador][i] < auxMin){
@@ -298,13 +314,21 @@ void dij(int matriz[][118], int ini, int fin){
                 }
             }
         }
-        verticeAux+=matrizAux[contador][vertice];
-        verticesUsados[vertice] = 1;
+        
         camino[contador+1] = vertice;
+        cout<<auxMin<<endl;
+        cout<<camino[contador+1]<<endl;
+        verticesUsados[vertice] = 1;
         contador++;
-        cout<<contador<<endl;
     }
-    cout<<"yay"<<endl;   
+    
+    cout<<"yay"<<endl; 
+    cout<<"largo camino: "<<auxMin<<endl;
+    for(int i=0; i<118; i++){
+        if(camino[i] != 0){
+            //cout<<camino[i]<<endl;
+        }
+    }
 }
  
  
