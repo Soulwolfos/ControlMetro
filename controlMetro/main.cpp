@@ -74,8 +74,7 @@ int main(int argc, char** argv) {
                 posF = i;
                 cout<<"Estacion final: "<<nombre<<", "<<codigo<<", "<<i<<endl;
             }
-        }
-        
+        }        
         dij(matriz, posI, posF);
     }
     else{
