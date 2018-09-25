@@ -306,7 +306,7 @@ void llenarCombinaciones(int matrizAdy[][118]){
 
 void dij(int matriz[][118], int ini, int fin){
     int matrizAux[118][118], verticesUsados[118];
-    int auxMin=99999999, vertice=0, camino[118], posCam=0, largoAux=0;
+    int auxMin=999999, vertice=0, camino[118], largoAux=0;
     
     for(int i=0; i<118; i++){
         verticesUsados[i] = 0;
@@ -320,78 +320,84 @@ void dij(int matriz[][118], int ini, int fin){
     
     verticesUsados[ini] = 1;
     camino[0] = ini;
-    for(int i=0; i<118; i++){   
-        matrizAux[0][i] = matriz[ini][i];
+    for(int i=0; i<118; i++){
+        if(verticesUsados[i] == 1){
+            matrizAux[0][i] = 0;
+        }
+        else{
+            if(matriz[ini][i] != 0){
+                matrizAux[0][i] = matriz[ini][i];
+            }
+            else{
+                matrizAux[0][i] = 888888;
+            }
+        }
     }
 
     int contador = 0;
     while(vertice != fin){
   
-        auxMin = 99999999;
+        auxMin = 999999;
         for(int i=0; i<118; i++){
             if(matrizAux[contador][i] != 0){
-                if(matrizAux[contador][i] < auxMin){
-                    auxMin = matrizAux[contador][i];
-                    vertice = i;
-                }
-            }
-        }
-        
-        
-        if(auxMin == 99999999){
-            for(int j=0; j<contador+1; j++){
-                for(int i=0; i<118; i++){
-                    if(matrizAux[j][i] != 0){
-                        if(verticesUsados[i] == 0){
-                            if(matrizAux[j][i] < auxMin){
-                                auxMin = matrizAux[j][i];
-                                vertice = i;
-                                camino[j] = vertice;
-                            }
+                if(matrizAux[contador][i] != 888888){
+                    if(verticesUsados[i] == 0){
+                        if(matrizAux[contador][i] < auxMin){
+                            auxMin = matrizAux[contador][i];
+                            vertice = i;
                         }
                     }
                 }
             }
         }
-        
+
         verticesUsados[vertice] = 1;
-        
+        largoAux = 0;
         for(int i=0; i<118; i++){
             if(verticesUsados[i] == 0){
-                if(matriz[vertice][i] == 0){
-                    matrizAux[contador+1][i] = matrizAux[contador][i];
-                }
-                else{
-                    if(matriz[vertice][i] + auxMin > largoAux){
-                        posCam += 1;
-                        camino[posCam] = vertice;
-                    }
-                    largoAux = matriz[vertice][i] + auxMin;
-                    if(matrizAux[contador][i] != 0){
-                        if(largoAux < matrizAux[contador][i]){
-                            matrizAux[contador+1][i] = largoAux;
-                        }
-                        else{
-                            matrizAux[contador+1][i] = matrizAux[contador][i];
-                        }
-                    }
-                    else{
-                        matrizAux[contador+1][i] = largoAux;
-                    }
-                }             
+              if(matriz[vertice][i] == 0){
+                  matrizAux[contador+1][i] = matrizAux[contador][i];
+              }
+              else{
+                  largoAux = matriz[vertice][i] + auxMin;
+                  if(largoAux < matrizAux[contador][i]){
+                      matrizAux[contador+1][i] = largoAux;
+                  }
+                  else{
+                      matrizAux[contador+1][i] = matrizAux[contador][i];
+                  }
+              }
             }
             else{
                 matrizAux[contador+1][i] = 0;
             }
         }
         
-        //camino[posCam] = vertice;      
+        camino[contador+1] = vertice;      
         contador++;
+    }
+    
+    
+    int aux=1, v1=0, v2=0, camFinal[118];
+    
+    for(int i=0; i<118; i++){
+        camFinal[i] = 0;
+    }
+    camFinal[0] = ini;
+    
+    v1 = camino[0];
+    for(int i=1; i<118; i++){
+        v2 = camino[i];
+        if(matriz[v1][v2] == 1){
+            camFinal[aux] = v2;
+            v1 = camino[i];
+            aux++;
+        }
     }
     
     cout<<"largo camino: "<<auxMin<<endl;
     for(int i=0; i<118; i++){
-        cout<<camino[i]<<endl;
+        cout<<camFinal[i]<<endl;
     }
 }
  
