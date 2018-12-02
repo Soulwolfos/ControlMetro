@@ -1,6 +1,6 @@
 # Computacion paralela y distribuida
 
-Controles, tarear y trabajos
+Control metro
 
 Integrantes:
   -Felipe Hernandez
